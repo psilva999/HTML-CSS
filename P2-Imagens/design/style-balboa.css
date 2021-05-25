@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+  figure.ROCKY3 {
+    position:relative;
+    border:3px solid red;
+    box-shadow:1px 1px 3px orange;
+    width:400px;
+    height:300px;
+  }
+  /*Retirando o WIDTH e HEIGHT será possível variar no tamanho na página WEB. Entretanto a imagem
+  cobre praticamente toda a página não sendo possível deixa-la com outro tamanho até o momento. */
+  figure.ROCKY3 img{
+    width:100%;
+    height:100%;
+  }
+  /*Tamanho da imagem dentro do figure*/
+  figure.ROCKY3 figcaption{
+    opacity:0;
+    background-color:rgba(0,0,0,.6);
+    position:absolute;
+    top:0px;
+    font-family:calibri;
+    color:white;
+    width:35%;
+    height:4%;
+    padding:10px;
+    box-sizing:border-box;
+    transition:opacity .2s;
+  }
+  /*position | top | padding | box-sizing - Ainda não compreendo essas tags mesmo revendo*/
+  figure.ROCKY3:hover figcaption{
+    opacity:1;
+  }
+  /*Para criar a opacidade no figcaption*/

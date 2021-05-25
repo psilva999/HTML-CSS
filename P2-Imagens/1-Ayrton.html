@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="">
+
+    <script src=""></script>
+    <title>Imagem do Ayrton Senna</title>
+    <meta charset="UTF-8">
+  </head>
+
+<body>
+  <h1>Imagem muda de acordo com o tamanho do dispositivo</h1>
+
+  <picture>
+    <source media="(max-width: 550px)" srcset="images/senna-original.jpg" type="image/jpg">
+    <source media="(max-width: 1250px)" srcset="images/senna800.jpg" type="image/jpg">
+    <img src="images/senna1200.jpg" alt="Imagem indisponível">
+
+  </picture>
+</body>
+</html>

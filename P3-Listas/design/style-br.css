@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+  body {
+    background-image:url("../images/br-f1.jpg");
+    font-family:calibri;
+    color:black;
+  }
+
+  h1 {
+    font-size:35px;
+    text-align:center;
+    background-color:#BDBDBD;
+  }
+
+  nav#SCUDERIA {
+    display:block;
+    position:absolute;
+    top:-25px;
+    left:120px;
+  }
+
+  nav#SCUDERIA ol {
+    font-size:30px;
+    list-style:none;
+    text-align:center;
+  }
+
+  nav#SCUDERIA li {
+    display:inline-block;
+    background-color:#BDBDBD;
+    padding:10px;
+    margin:3px;
+  }
