@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="images/.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <script src=".js"></script>
+  <title>Mapa de Westeros</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <section> <h1>Mapa de Westeros</h1>
+
+    <p>Clique no local para ampliar a imagem</p>
+
+    <!--'usemap' conecta com a tag 'map' utitlizando a hashtag-->
+    <img src="images/westeros.jpg" usemap="#pontos" alt="Imagem indisponível">
+
+    <map name="pontos">
+      <!--'shape' para definir a forma de cada <area> | 'coords' para definir a localização | 'alt' para exibir um comentário caso algum deles dê problema | 'target' para abrir em outra aba-->
+      <area shape="rect" coords="420, 100, 30, 30" alt="Wall" href="images/wall.jpg" target="_blank">
+      <area shape="circle" coords="200, 150, 30" alt="Winterfell" href="imagns/winterfell.jpg" target="_blank">
+      <area shape="circle" coords="250, 400, 30" alt="Kings Landing" href="images/kingsLanding.jpg" target="_blank">
+
+    </map>
+  </section>
+
+</body>
+</html>

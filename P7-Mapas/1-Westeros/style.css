@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+  /* background com uma cor menos branca | Calibri como fonte principal para o site */
+  body { background-color:#F2F2F2; font-family:Calibri; }
+
+  /* display deixar a section solta na página (bloco) | margen automática para o centro da página | largura de 450px | texto centralizado
+  (decidi seguir pela hierarquia do CSS) */
+  section { display:block; margin:auto; width:450px; text-align:center; }
+
+  /* largura de 450px | altura de 600px | margen automática */
+  img { width:450px; height:600px; margin:auto; }
+
+  /* Preciso melhorar meus comentários */

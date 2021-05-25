@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+  /* background-color definido para um tom menos branco */
+  body { background-color:#F2F2F2; }
+
+  /* margin automática | flutua como bloco graças ao display | largura de 450px */
+  section { margin:auto; display:block; width:450px; }
+
+  /* overflow:hidden; impede que a barra seja rolada para baixo caso o scrolling no index.html seja definido como 'no' | altura de 550px | largura de 450px |
+  sem borda | margin automática para permitir que o arquivo fique centralizado independente do tamanho da tela*/
+  iframe { overflow:hidden; height:550px; width:450px; border:none; display:block; margin:auto; }
+
+  /* Exemplo de como representar um webkit no CSS com função de não permitir que a barra role para baixo ou para cima */
+  iframe::-webkit-scrollbar { display:none; }

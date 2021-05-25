@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+  body { background-color:#F2F2F2; font-family:Calibri; }
+
+  table { border:1px solid gray; border-spacing:19px; margin:auto; }
+
+  caption { border:1px solid gray; }
+
+
+  th { border:1px solid gray; padding:9px; }
+
+  td { border:1px solid gray; text-align:center; padding:9px; }
+
+
+  .REFERE { font-size:18px; font-weight:bolder; }
+
+  .MAIOR { text-align:center; font-size:18px; }
+
+  .FONTE { color:rgba(0,0,0,.8); }
+
+  a { color:rgba(0,0,0,.8); }
+
+  a:hover { text-decoration:none; }
