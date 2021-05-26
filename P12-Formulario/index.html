@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="images/.ico">
+  <link rel="stylesheet" href="design/style.css">
+
+  <script src="interatividade/.js"></script>
+  <title>Formulário</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <form method="post" id="dadosUsuario" action="mailto:p.silva0399@gmail.com" oninput="totalPagar()">
+    <fieldset> <legend>Identificação:</legend>
+
+      <p>
+        <label for="sNome">Nome completo:</label>
+        <input type="text" name="pNome" id="sNome" size="40" maxlength="40" placeholder="Digite o seu nome completo">
+      </p>
+
+      <p>
+        <label for="sEmail">E-mail:</label>
+        <input type="email" name="pEmail" id="sEmail" size="40" maxlength="40" placeholder="Digite seu e-mail">
+      </p>
+
+      <p>
+        <label for="sEscondido">Senha:</label>
+        <input type="password" name="pEscondido" id="sEscondido" size="10" maxlength="21" placeholder="No máximo 21">
+      </p>
+
+      <fieldset> <legend>Sexo:</legend>
+
+        <input type="radio" name="pSexo" id="sMasc">
+        <label for="sMasc">Masculino</label>
+
+        <br>
+        <input type="radio" name="pSexo" id="sFemi">
+        <label for="sFemi">Feminino</label>
+
+        <br>
+        <input type="radio" name="pSexo" id="sOutro">
+        <label for="sOutro">Outro</label>
+
+        <br>
+        <input type="radio" name="pSexo" id="sNenhum">
+        <label for="sNenhum">Prefiro não informar</label>
+      </fieldset>
+
+      <p>
+        <label for="sNascimento">Data de nascimento:</label>
+        <input type="date" name="pNascimento" id="sNascimento">
+      </p>
+    </fieldset>
+
+    <fieldset> <legend>Endereço:</legend>
+
+      <p>
+        <label for="sCountry">País:</label>
+        <input type="text" name="pCountry" id="sCountry" size="20" maxlength="20" placeholder="País que você reside">
+      </p>
+
+      <p>
+        <label for="sEstado">Estado:</label>
+        <select name="pEstado" id="sEstado">
+      </p>
+
+      <optgroup label="Sudeste">
+
+        <option value="SP" selected> São Paulo </option>
+        <option value="RJ"> Rio de Janeiro </option>
+        <option value="MG"> Minas Gerais </option>
+        <option value="ES"> Espírito Santo </option>
+      </optgroup>
+
+      <optgroup label="Nordeste">
+
+        <option value=""> Pernambuco </option>
+        <option value=""> Bahia </option>
+        <option value=""> Ceará </option>
+        <option value=""> Maranhão </option>
+        <option value=""> Sergipe </option>
+        <option value=""> Piauí </option>
+        <option value=""> Paraíba </option>
+        <option value=""> Rio Grande do Norte </option>
+        <option value=""> Alagoas </option>
+      </optgroup>
+
+      <optgroup label="Sul">
+
+        <option value=""> Santa Catarina </option>
+        <option value=""> Rio Grande do Sul </option>
+        <option value=""> Paraná </option>
+      </optgroup>
+
+      <optgroup label="Norte">
+
+        <option value=""> Pará </option>
+        <option value=""> Amazonas </option>
+        <option value=""> Tocantins </option>
+        <option value=""> Rondônia </option>
+        <option value=""> Roraima </option>
+        <option value=""> Acre </option>
+        <option value=""> Amapá </option>
+      </optgroup>
+
+      <optgroup label="Centro-Oeste">
+
+        <option value=""> Mato Grosso </option>
+        <option value=""> Goiás </option>
+        <option value=""> Destrito Federal </option>
+        <option value=""> Mato Grosso do sul </option>
+      </optgroup>
+    </select>
+
+      <p>
+        <label for="sCidade">Cidade:</label>
+        <input type="text" name="pCidade" list="Cidades" id="sCidade" size="20" maxlength="40" placeholder="Recife, Salvador, Curitiba... ">
+
+        <datalist id="Cidades">
+          <option value="Recife"></option>
+          <option value="Jaboatão dos Guararapes"></option>
+          <option value="Caruaru"></option>
+        </datalist>
+      </p>
+
+      <p>
+        <label for="sLogradouro">Logradouro:</label>
+        <input type="text" name="pLogradouro" id="sLogradouro" size="20" maxlength="80" placeholder="Rua, avenida, travessa">
+      </p>
+
+      <p>
+        <label for="sNumber">Número:</label>
+        <input type="number" name="pNumber" id="sNumber" min="1" max="999">
+      </p>
+    </fieldset>
+
+    <fieldset> <legend>Mensagem do usuário</legend>
+
+      <p>
+        <label for="sUrg">Graú de ungência:</label> Mín
+        <input type="range" name="pUrg" id="sUrg" min="0" max="10" step="1">Máx
+      </p>
+
+      <p>
+        <label for="sMen">Mensagem:</label>
+        <textarea name="pMen" id="sMen" rows="4" cols="30" placeholder="Digite sua mensagem"></textarea>
+      </p>
+    </fieldset>
+
+    <fieldset> <legend>Personalize seu livro</legend>
+
+      <p>
+        <input type="checkbox" name="sCornwell" id="sCornwell">
+        <label for="sCornwell">Quero um livro do Bernard Cornwell</label>
+      </p>
+
+      <p>
+        <label for="sCor">Escolha a cor do seu livro</label>
+        <input type="color" name="pCor" id="sCor" value="#F2F2F2">
+      </p>
+
+      <p>
+        <label for="sQuant">Quantidade</label>
+        <input type="number" name="pQuant" id="sQuant" value="0" min="1" max="999">
+      </p>
+
+      <p>
+        <label for="sReal">Preço: R$</label>
+        <input type="text" name="pReal" id="sReal" placeholder="Valor a pagar" readonly>
+      </p>
+    </fieldset>
+
+    <button>Enviar</button>
+  </form>
+
+</body>
+</html>

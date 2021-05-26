@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+  /* Texto centralizado em toda a página */
+  body { background-color:#F2F2F2; font-family:Calibri; text-align:center; }
+
+  /* margen automática | block flutuante | largura de 430px */
+  section { margin:auto; display:block; width:430px; }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href=".ico">
+  <link rel="stylesheet" href="style.css">
+
+  <script src=".js"></script>
+  <title>Símbolos e tags</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <section> <h1>SÍMBOLOS E TAGS NO HTML</h1>
+
+    <nav>
+      <li>&lt; &gt; &le; &ge;</li>
+
+      <li>&times; &infin; &plusmn; &radic;</li>
+      <li>&plus; &copy; &larr; &rarr;</li>
+    </nav>
+
+    <nav id="S2">
+      <li>&pound; &euro; &yen; &dollar;</li>
+
+      <li>&ne; &Delta; &Lambda; &Omega; &Phi;</li>
+      <li>&spades; &clubs; &diams; &hearts;</li>
+    </nav>
+    <!--Para criar símbolos especiais no HTML, basta colocar '&símbolo;' em cada uma delas. -->
+
+    <span>
+      H<sub>2</sub>O | O<sup>2</sup> | X<sup>2</sup>
+      <!--Cria fórmulas utilizando <sup> e <sub>-->
+    </span>
+
+    <pre>
+      <code>
+        #include &lt; iostream &gt;
+        int main() {
+          cout << "HELLO, WORLD!";
+          return 0;
+        }
+      </code>
+      <!--Forma de exibir códigos na sua página | <pre> serve para deixar o conteúdo com a quebra de linha desejada-->
+    </pre>
+
+    <hr>
+    <!--<hr> cria uma linha abaixo de algum título ou texto-->
+
+    <p>&#x1F601;
+      <!--Para criar emojis é só colocar &#xInsiraCódigoEmoji;
+      fonte de emojis: https://emojipedia.org-->
+    </p>
+
+    <h1 class="igual">Títulos</h1>
+    <h2 class="igual">só</h2>
+
+    <h3 class="igual">até</h3>
+    <h4 class="igual">o</h4>
+
+    <h5 class="igual">número</h5>
+    <h6 class="igual">Seis</h6>
+    <!--Títulos podem ser repetidos na mesma página com limite de irem até
+    <h6>-->
+
+    <address>Rua da tamaritanga, peleja, brazil, universo
+      <!--<address> para adicionar endereço-->
+    </address>
+
+    <p>
+      <strong>Negrito</strong>
+      <em>Itálico</em>
+      <!--<strong> deixa a fonte mais escura. <em> deixa a fonte itálica-->
+    </p>
+
+    <mark>Quero branquelo
+    <!--<mark> marca alguma parte do texto para modificar como quiser-->
+    </mark>
+
+    <p>
+      Letra vai ficar <small>pequena</small>
+      <!--<small> deixa a letra menor-->
+    </p>
+
+    <p>
+      <del>Não leia essa parte</del>
+      <!--<del> deixa com traço no meio-->
+    </p>
+
+    <p>
+      <ins>Underline</ins>
+      <!--<ins> deixa com underline-->
+    </p>
+
+    <p>
+      <q cite="">Its just my self talk to my self about my self</q>
+      <!--<q> cria citação com aspas com opção de adicionar link-->
+    </p>
+
+    <p>Frase de Tommy Shelby:
+      <blockquote cite="www.youtube.com/watch?v=N29-SlAHtPI">
+        Its just my self talk to my self about my self
+      </blockquote>
+      <!--<blockquote> cria citação com opção de adicionar link e sem aspas-->
+    </p>
+
+    <p>
+      <abbr title="International Business Machines">IBM</abbr>
+      <!--<abbr> maneira de colocar significados em abreviações
+      de uma maneira mais discreta-->
+    </p>
+
+    <p>Curto quando as pessoas tentam ler
+      <bdo dir="rtl">mensagens sem sentido por serem curiosas</bdo>
+      <!--<bdo> com parâmetro "rtl" cria texto invertido-->
+    </p>
+
+    <ul>
+      <li>Listas
+      <li>sem
+      <li>tags
+      <li>de
+      <li>fechamento
+      <!--Opção de retirar tag de fechamento para o <li> (prefiro com)-->
+    </ul>
+
+    <dl>seila
+      <dt>
+        <dd>seila</dd>
+        <dd>vai</dd>
+        <dd>aqui</dd>
+        <dd>mesmo</dd>
+      </dt>
+      <!--<dl> cria o texto na linha normal | <dt> e <dd>
+      ajudam o texto a ficar abaixo do principal-->
+    </dl>
+
+    <a href="#" target="_blank" rel="external">abre em outra aba</a>
+    <br><br>
+    <a href="#" target="_self" rel="next">abre na mesma aba | rel indicando próxima</a>
+    <br><br>
+
+    <a href="#" target="_self" rel="prev">abre na mesma aba | rel indicando aba anterior</a>
+    <br><br>
+    <a href="#" target="_self" rel="noFollow">rel indicando para o mecanismo de busca NÃO seguir esse site</a>
+    <!--Recomenda-se colocar # em links vázios-->
+
+    <br><br>
+    <a href="download.pdf" type="application/pdf" download="download.pdf">downloadME</a>
+    <!--Para fazer download de algum documento-->
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum.
+    </p>
+    <!--Texto aleatório-->
+  </section>
+
+</body>
+</html>

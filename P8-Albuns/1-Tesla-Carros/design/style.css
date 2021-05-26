@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+  /* Cor de fundo com um branco mais escuro | fonte definida logo no <body> para Calibri | texto centralizado */
+  body { background-color:#F2F2F2; font-family:Calibri; text-align:center; }
+
+  /* margen automática | display fazendo do <nav> um bloco flutuante | largura de 450px */
+  nav { margin:auto; display:block; width:450px; }
+
+  /* background da tag <ul> com uma imagem  que não se repete | Posição da imagem centralizada | Zoom original ao carregar a imagem na página | trasição definida
+  para toda a imagem com .2 segundos de delay e trasição suave | borda com 1px e cinza | lista sem estilo | altura de 300px | largura de 430px | distância para
+  a borda de 4px */
+  ul {
+    background:url("tesla.jpg") no-repeat;
+    background-position:50% 50%;
+    background-size:900px 900px;
+    transition:all .2s ease-in;
+    border:1px solid gray;
+    list-style:none;
+    height:300px;
+    width:430px;
+    padding:4px;
+  }
+
+  /* Parte animada da imagem */
+  /* posição ficará do tamanho original da imagem | imagem será ampliada com 438 de largura e 370 de altura | 'transform' fará com que a escala da imagem
+  aumente para 1.3 */
+  ul:hover { background-position:0px 0px; background-size:438px 370px; transform:scale(1.3); }
+
+  /* cor de fundo um pouco escura | line-height para definir o tamanho da linha (talvez seja alguma gambiarra temporária para cortar
+  algumas linhas de código) | opacidade definida para 0  */
+  span { background-color:rgba(0,0,0,.7); line-height:520px; color:#F2F2F2; opacity:0; padding:4px; }
+
+  /* opacidade do <span> difinida para 1 */
+  li:hover span { opacity:1; }

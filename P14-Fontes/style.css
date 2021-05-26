@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* Fonte interna definida por arquivo .otf armazenado no repositorio */
+@font-face {
+  src:url("Hello_Jones_Free_Trial.otf");
+  font-family:'fonteJones';
+}
+
+  /* Fonte externa definida por link no HTML */
+  body { background-color:#F2F2F2; font-family:'Girassol', cursive; }
+
+  /* largura de 430px | distância do conteúdo pra borda de 5px | <section> em bloco automatizada */
+  section { width:430px; padding:5px; margin:auto; display:block; }
+
+  /* tamanho da fonte definida para 18px | texto justificado na <section> */
+  p { font-size:18px; text-align:justify; }
+
+  /* link com underline graças ao 'text-decoration' */
+  a { color:black; text-decoration:underline; }
+
+  /* 'hover' deixará o link mais claro quando o mouse passar por cima */
+  a:hover { color:rgba(0,0,0,.8); }
+
+  /* <section> definida com a fonte do Jones */
+  .jonesFont { font-family:fonteJones; }
