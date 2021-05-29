@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+  body { background-color:#F2F2F2; font-family:Calibri; }
+
+  section { margin:auto; display:block; width:450px; }
+
+  a { color:black; text-decoration:underline; }
+
+  a:hover { text-decoration:none; }
