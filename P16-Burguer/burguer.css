@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+  /* Hamburguer no menu */
+
+  body { background-color:#F2F2F2; font-family:Calibri; }
+
+  #burguer, label { display:none; }
+
+  /* @media - permite que determinada função seja ativada de acordo com o tamanho da tela */
+  nav { display:block; margin:auto; width:35%; }
+
+  /* label para configurar o &#9776; (burguer para os íntimos) */
+  label { display:inline-block; color:#F2F2F2; background:orange; font-size:45px; font-style:1.2em; padding:10px; }
+
+  /* Configuração que permite que a lista fique dentro do burguer */
+  li, a { box-sizing:border-box; display:block; width:100%; margin-left:0px;  }
+
+  ul { display:none; }
+
+  /* fazendo o burguer funcionar utilizando 'checked' pra (~) lista não ordenada */
+  input:checked ~ ul { display:block; }
