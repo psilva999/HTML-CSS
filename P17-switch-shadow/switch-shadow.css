@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+  /* Configurações para criar um switch shadow */
+
+  body { background-color:#F2F2F2; font-family:Calibri; }
+
+  div { display:block; width:20%; margin:auto; }
+
+
+  /* visibility:hidden; -  para manter o elemento oculto na página*/
+  .switch-shadow { position:absolute; visibility:hidden; }
+
+  /* user-select:none; - evita que o elemento seja selecionado na página |
+     outline:none; - evita a criação de uma linha desenhada fora da borda do elemento |
+     cursor:pointer; - especifica o cursor do mouse que será exibido na tela  */
+  .switch-shadow + label {
+    background-color:gray;
+    border-radius:50px;
+    position:relative;
+    user-select:none;
+    display:block;
+    outline:none;
+    cursor:pointer;
+    padding:3px;
+    width:110px;
+    height:60px;
+  }
+
+  /* :before e :after indicando as ações que ocorreram quando o usuário interagir com o switch shadow
+     content:''; - utilizado com o :before e :after para inserir o conteú geraro |
+     bottom:; - afeta a posição do elemento de acordo com o position:absolute; */
+  .switch-shadow + label:before, .switch-shadow + label:after {
+    position:absolute;
+    display:block;
+    top:1px;
+    left:1px;
+    content:'';
+    bottom:1px;
+  }
+
+
+  /* :before - Insere alguma ação antes do conteúdo de cada elemento */
+  .switch-shadow + label:before { background:red; border-radius:50px; transition:all .5s; right:1px; }
+
+  /* :after - Insere pós o conteúdo ou ação */
+  .switch-shadow + label:after {
+    box-shadow:0 3px 4px rgba(0,0,0,.5);
+    background:#F2F2F2;
+    border-radius:100%;
+    width:60px;
+    transition:all .4s;
+  }
+
+  /* :checked - serve para input e <option> quando um dos dois
+     é marcado alguma ação ocorre graças a essa propriedade */
+  .switch-shadow:checked + label:before { background-color:green; }
+
+  /* transform:translateX(60px); - propriedade que permita algum item se mover */
+  .switch-shadow:checked + label:after { transform:translateX(60px); }
