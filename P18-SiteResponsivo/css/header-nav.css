@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+  /* asterístico indicando que os atributos serão utilizados em todas as tags
+     box-sizing:border-box; - permite utilizar o padding e margin na largura e altura de cada tag */
+  * { box-sizing:border-box; font-family:Calibri;  }
+
+  /* margin:0; - permite que a página cubra toda a tela */
+  body { background-color:rgba(0,0,0,.1); margin:0; }
+
+  /* border-radius - proporciona uma leve curvatura em torno de elemento configurado
+     padding - lida com a distância entre conteúdo e borda */
+  header h1 { border-radius:15px; background-color:black; color:#F2F2F2; padding:29px; text-align:center; }
+
+
+  /* position:sticky; - faz com que o 'nav' acompanhe o usuário conforme for rolando a página para baixo */
+  nav { border-radius:15px; background-color:orange; position:sticky; top:0; width:100%; }
+
+  /* display:flex; - lida com a renderização do elemento, nesse caso o torna flexível */
+  ul { display:flex; }
+
+  li { display:inline-block; font-size:17px; padding:12px; }
+
+
+  a { text-decoration:none; color:black; }
+
+  a:hover { text-decoration:underline; color:rgba(0,0,0,.8); }
