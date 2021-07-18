@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+
+* {
+   margin:0;
+   padding:0;
+   font-family:sans-serif;
+   user-select:none;
+}
+
+body {
+   overflow-x:hidden;
+}
+
+/* links */
+a {
+   text-decoration:none;
+   color:black;
+   transition:.1s;
+}
+
+nav {
+   background-color:#F2F2F2;
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+   letter-spacing:2px;
+   text-transform:uppercase;
+   height:12vh;
+}
+
+#logo {
+   font-size:20px;
+}
+
+/* background */
+main {
+   background:url('runner.jpg') no-repeat center center;
+   background-size:cover;
+   height:88vh;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="base.css">
+   <link rel="stylesheet" href="menu.css">
+
+   <title>Zona de testes</title>
+</head>
+
+<body>
+   <header>
+      <nav>
+         <a href="#" id="logo">PSILVA</a>
+
+         <div class="menu">
+            <div class="abre"></div>
+            <div class="fecha"></div>
+            <div class="abre-fecha"></div>
+         </div>
+
+         <ul class="lista">
+            <li>
+               <a href="#">Inicio</a> </li>
+
+            <li>
+               <a href="#">História</a> </li>
+
+            <li>
+               <a href="#">Contato</a> </li>
+         </ul>
+
+      </nav>
+   </header>
+
+   <main></main>
+
+<script>
+   class navbar {
+      constructor(barras, listas, ligados) {
+         this.barras = document.querySelector(barras)
+         this.listas = document.querySelector(listas)
+
+         this.ligados = document.querySelectorAll(ligados)
+         this.activeClass = 'active'
+
+         this.handleClick = this.handleClick.bind(this)
+      }
+
+      animados() {
+         this.ligados.forEach((link, index) => {
+            link.style.animation
+               ? (link.style.animation = '')
+               : (link.style.animation = `navLinkFade 0.7s ease forwards ${index / 7 + 0.5}s`)
+         })
+      }
+
+      handleClick() {
+         this.listas.classList.toggle(this.activeClass)
+         this.barras.classList.toggle(this.activeClass)
+
+         this.animados()
+      }
+
+      addClickEvent() {
+         this.barras.addEventListener('click', this.handleClick)
+      }
+
+      init() {
+         if (this.barras) {
+            this.addClickEvent()
+         }
+
+         return this
+      }
+   }
+
+   const responsivo = new navbar(
+      '.menu',
+      '.lista',
+      '.lista li')
+
+   responsivo.init() </script>
+
+</body>
+</html>
