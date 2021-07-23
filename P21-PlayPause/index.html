@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <link rel="shortcut icon" type="image/x-icon" href="">
+   <link rel="stylesheet" href="">
+
+   <style>
+      * {
+         margin:0;
+         border:0;
+         padding:0;
+         box-sizing:border-box;
+      }
+
+      body, .container, #player, .pause, .play {
+         display:flex;
+         justify-content:center;
+         align-items:center;
+      }
+
+      body {
+         width:100%;
+         height:100vh;
+      }
+
+      .container {
+         background-color:orange;
+         width:100%;
+         height:100%;
+         padding:10px;
+      }
+
+      #player {
+         background-color:#F2F2F2;
+         border-radius:50%;
+         box-shadow:3px 5px 10px black;
+         position:relative;
+         width:250px;
+         height:250px;
+         cursor:pointer;
+      }
+
+      .pause, .play {
+         position:absolute;
+         width:100%;
+         height:100%;
+      }
+
+      .line{
+         background:black;
+         border-radius:10px;
+         position:absolute;
+         width:7px;
+         box-shadow:0px 0px 2px black;
+         transition:all 220ms cubic-bezier(.8,0,.33,1);
+      }
+
+      .pause.active .line_1 {  
+         height:35%;
+         margin:25% 0;
+         left:39%;
+      }
+
+      .pause.active .line_2 {
+         height:35%;
+         margin:25% 0;
+         right:39%;
+      }
+
+      .play.active .line_1 {
+         left:39%;
+         height:35%;
+      }
+
+      .play.active .line_2 {
+         left:66%;
+         height:35%;
+         transform:rotate(-63deg) translateY(-33px) translateX(5px);
+      }
+      
+      .play.active .line_3 {
+         left:66%;
+         height:35%;
+         transform:rotate(63deg) translateY(33px) translateX(5px);
+      }
+   </style>
+
+   <title>Pause play</title>
+</head>
+
+<body>
+   <div class="container">
+
+      <div id="player">
+         <div class="pause active">
+            <div class="line line_1"></div>
+            <div class="line line_2"></div>
+         </div>
+         
+         <div class="play">
+            <div class="line line_1"></div>
+            <div class="line line_2"></div>
+            <div class="line line_3"></div>
+         </div>
+
+      </div>
+   </div>
+
+   <script>
+      var pause = document.querySelector('.pause');
+      var play = document.querySelector('.play');
+      var btn = document.querySelector('#player');
+
+      btn.addEventListener('click', () => {
+         if (play.classList.contains("active")) {
+            play.classList.remove("active");
+            pause.classList.add("active");
+         }
+
+         else {
+            pause.classList.remove("active");
+            play.classList.add("active");
+         }
+      })
+   </script>
+
+</body>
+</html>
