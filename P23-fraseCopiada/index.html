@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <link rel="shortcut icon" type="image/x-icon" href="">
+   <link rel="stylesheet" href="">
+   <style>
+      * {
+         border:0;
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+         font-family:sans-serif;
+      }
+
+      body {
+         background-color:rgb(97, 79, 44);
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         width:100vw;
+         height:100vh;
+         color:#F2F2F2;
+      }
+
+      .container {
+         background-color:#F2F2F2;
+         border-radius:10px;
+         position:absolute;
+         align-items:center;
+         width:300px;
+         height:300px;
+         padding:10px;
+         text-align:justify;
+      }
+
+      h1 {
+         text-align:center;
+         font-size:17px;
+         color:rgba(0,0,0,.7);
+         margin:20px;
+         letter-spacing:1px;
+         text-transform:uppercase;
+      }
+
+      .principal, input, button {
+         background:#F2F2F2;
+         cursor:pointer;
+      }
+
+      .principal {
+         border:1px solid rgba(0,0,0,.5);
+         border-radius:5px;
+         width:280px;
+         height:50px;
+         padding:5px;
+         user-select:none;
+      }
+
+      input {
+         font-size:18px;
+         padding:7px;
+         color:black;
+         opacity:.9;
+      }
+
+      input:focus {
+         outline:0;
+      }
+
+      img {
+         position:relative;
+         top:5px;
+         left:10px;
+         width:20px;
+         height:20px;
+         opacity:.6;
+      }
+
+      input:hover, img:hover {
+         opacity:1;
+      }
+
+      .copied {
+         display:none;
+      }
+
+      .copied.active {
+         background-color:rgba(0,0,0,.7);
+         border-radius:5px;
+         width:61px;
+         position:absolute;
+         top:125px;
+         left:230px;
+         display:block;
+         padding:7px;
+         color:#F2F2F2;
+         font-size:11px;
+         letter-spacing:1px;
+         text-transform:uppercase;
+         text-align:center;
+         opacity:.9;
+         transition:3s;
+         animation:3s ease-in-out;
+      }
+   </style>
+
+   <title>Frasetadas</title>
+</head>
+
+<body> 
+ 
+   <div class="container"> <h1>Frasetadas</h1>
+
+      <div class="principal">
+         <input type="text" value="Testando na chuva" id="conteudo" readonly>
+
+         <div class="copied">Copied</div>
+         <img src="copy.svg" alt="Imagem indisponível" id="imagem"> 
+      </div>
+
+      <div class="final"></div>
+   </div>
+
+   <script>
+      var copiarTexto = document.querySelector('.principal')
+
+      //Evento onclick
+      copiarTexto.addEventListener('click', () => {
+         var copiaTroca = {
+            frase: document.querySelector('#conteudo'),
+
+            trocaImagem: document.querySelector('#imagem'),
+            apareceItem: document.querySelector('.copied')
+         }
+
+         copiaTroca.frase.select()
+         copiaTroca.frase.setSelectionRange(0, 9999)
+         document.execCommand('copy')
+
+         copiaTroca.apareceItem.classList.add('active')
+      })
+   </script>
+</body>
+</html>
