@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      * {
+         border:0;
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+         font-family:sans-serif;
+      }
+
+      body {
+         background:rgb(97, 79, 44);
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         width:100vw;
+         height:100vh;
+         color:#F2F2F2;
+      }
+
+      .container {
+         background:#F2F2F2;
+         border-radius:10px;
+         display:flex;
+         position:absolute;
+         align-items:center;
+         justify-content:center;
+         width:300px;
+         height:300px;
+         padding:10px;
+      }
+
+      h1 {
+         text-align:center;
+         font-size:17px;
+         color:rgba(0,0,0,.7);
+         margin:20px;
+         letter-spacing:1px;
+         text-transform:uppercase;
+      }
+
+      img {
+         border:1px solid rgba(0,0,0,.8);
+         box-shadow:1px 1px 3px rgba(0,0,0,.7);
+         border-radius:10px;
+         cursor:pointer;
+         width:100px;
+         height:100px;
+         position:relative;
+         right:16px;
+      }
+
+      .link {
+         visibility:hidden;
+      }
+
+      .link.active {
+         background-color:rgba(0,0,0,.8);
+         border-radius:20px;
+         position:absolute;
+         width:350px;
+         height:335px;
+         padding:10px;
+      }
+
+      .link.active .fecha {
+         position:absolute;
+         font-size:24px;
+         opacity:.7;
+         cursor:pointer;
+         right:10px;
+         top:5px;
+      }
+
+      .link.active .fecha:hover {
+         opacity:1;
+      }
+
+      .link.active h1 {
+         color:#F2F2F2;
+         font-size:14px;
+         opacity:.6;
+         width:240px;
+         position:relative;
+         left:25px;
+      }
+
+      .link.active #qrcode {
+         width:170px;
+         height:170px;
+         border:1px solid rgba(0,0,0,.8);
+         box-shadow:1px 1px 3px rgba(0,0,0,.7);
+         opacity:.8;
+         position:absolute;
+         right:88px;
+      }
+
+      .link.active .copiarLink {
+         box-shadow:1px 1px 3px rgba(0,0,0,.7);
+         background-color:#F2F2F2;
+         border-radius:10px;
+         width:267px;
+         position:relative;
+         top:190px;
+         left:33px;
+         cursor:pointer;
+         opacity:.8;
+         padding:3px;
+      }
+
+      .link.active input, button {
+         padding:5px;
+         color:black;
+         font-size:15px;
+         cursor:pointer;
+      }
+
+      .link.active input {
+         border:1px solid rgba(0,0,0,.4);
+         border-radius:10px;
+         resize:none;
+      }
+
+      input:focus {
+         outline:0;
+      }
+
+      .copiado {
+         visibility:hidden;
+      }
+
+      .copiado.active {
+         background:rgb(182, 179, 179);
+         border-radius:10px;
+         position:absolute;
+         left:150px;
+         top:310px;
+         padding:5px;
+         width:50px;
+         color:black;
+         font-size:12px;
+         visibility:hidden;
+      }
+   </style>
+
+   <title>Compartilha</title>
+</head>
+
+<body> 
+ 
+   <div class="container"> <h1></h1>
+      <img src="share.svg" id="share" alt="Imagem indisponível">
+
+      <div class="link active"> 
+         <div class="fecha">X</div>
+
+         <h1>Aponte sua câmera para o QR Code ou copie o link</h1>
+         
+         <img src="qrcode_psilva999.github.io.png" id="qrcode" alt="Imagem Indisponível">
+
+         <div class="copiarLink">
+            <input type="text" id="link" value="https://psilva999.github.io/Ayrton-Senna-Brasil/" readonly>
+
+            <button id="botao">COPY</button>
+         </div>
+         
+         <div class="copiado">Copied</div>
+      </div>
+   </div>
+
+   <script>
+      //Abre e fecha os links
+      var compartilha = document.querySelector('#share')
+      var mostraLinks = document.querySelector('.link')
+      var fechaLinks = document.querySelector('.fecha')
+
+      compartilha.addEventListener('click', () => {
+         mostraLinks.style.visibility = 'visible'
+      })
+
+      fechaLinks.addEventListener('click', () => {
+         mostraLinks.style.visibility = 'hidden'
+      })
+
+      //Copiar link
+      var copiarLink = document.querySelector('.copiarLink')
+
+      copiarLink.addEventListener('click', () => {
+         var copiaPor = {
+            link: document.querySelector('#link'),
+            indicaQueCopiou: document.querySelector('.copiado')
+         }
+
+         event.preventDefault()
+
+         copiaPor.link.select()
+         copiaPor.link.setSelectionRange(0, 9999)
+         document.execCommand("copy") //Não encontrei um substituto
+
+         copiarPor.indicaQueCopiou.style.visibility = 'visible'
+         copiaPor.indicaQueCopiou.classList.add('active')
+      })
+   </script>
+</body>
+</html>
