@@ -80,17 +80,17 @@
       }
 
       .link.active .fecha {
-         background-color:#F2F22F;
+         background-color:#F2F2F2;
          border-radius:50%;
-         box-shadow:0px 0px 0px 1px black;
+         box-shadow:0px 0px 1px #F2F2F2;
          position:absolute;
-         padding:8px;
+         padding:7px;
          font-size:19px;
          cursor:pointer;
          right:-15px;
          top:-20px;
          color:black;
-         opacity:.9;
+         opacity:.8;
       }
 
       .link.active .fecha:hover {
@@ -227,20 +227,35 @@
          fechaPorFora.style.visibility = 'hidden'
       })
 
-      //Copia os link
+      //Copia links
       copiarLink.addEventListener('click', () => {
          var copiaPor = {
             link: document.querySelector('#link'),
-            indicaQueCopiou: document.querySelector('.copiado')
+            indicaQueCopiou: document.querySelector('.copiado'),
          }
 
          event.preventDefault()
-
          copiaPor.link.select()
+
          copiaPor.link.setSelectionRange(0, 9999)
          document.execCommand("copy") //Não encontrei um substituto
 
          copiaPor.indicaQueCopiou.style.visibility = 'visible'
+
+         //Apagar indicador de copy
+         var time = 0 * 60
+         setInterval(apagarIndicadorDeCopy, 1000)
+
+         function apagarIndicadorDeCopy() {
+            var segundos = time % 60
+
+            time ++
+
+            if (segundos == 1) {
+               copiaPor.indicaQueCopiou.style.visibility = 'hidden'
+            }
+         }
+
       })
    </script>
 </body>
