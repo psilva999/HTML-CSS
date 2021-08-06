@@ -61,21 +61,36 @@
       }
 
       .link.active {
-         background-color:rgba(0,0,0,.8);
-         border-radius:20px;
+         background-color:#F2F2F2;
+         border-radius:5px;
+         box-shadow:0px 0px 0px 2px black;
          position:absolute;
          width:350px;
          height:335px;
          padding:10px;
       }
 
+      .fechaTudo {
+         background-color:rgba(0,0,0,.3);
+         position:fixed;
+         height:100vh;
+         width:100vw;
+         filter:blur(3px);
+         visibility:hidden;
+      }
+
       .link.active .fecha {
+         background-color:#F2F22F;
+         border-radius:50%;
+         box-shadow:0px 0px 0px 1px black;
          position:absolute;
-         font-size:24px;
-         opacity:.7;
+         padding:8px;
+         font-size:19px;
          cursor:pointer;
-         right:10px;
-         top:5px;
+         right:-15px;
+         top:-20px;
+         color:black;
+         opacity:.9;
       }
 
       .link.active .fecha:hover {
@@ -83,12 +98,12 @@
       }
 
       .link.active h1 {
-         color:#F2F2F2;
+         color:black;
          font-size:14px;
-         opacity:.6;
          width:240px;
          position:relative;
          left:25px;
+         opacity:.9;
       }
 
       .link.active #qrcode {
@@ -96,7 +111,6 @@
          height:170px;
          border:1px solid rgba(0,0,0,.8);
          box-shadow:1px 1px 3px rgba(0,0,0,.7);
-         opacity:.8;
          position:absolute;
          right:88px;
       }
@@ -110,7 +124,6 @@
          top:190px;
          left:33px;
          cursor:pointer;
-         opacity:.8;
          padding:3px;
       }
 
@@ -119,6 +132,7 @@
          color:black;
          font-size:15px;
          cursor:pointer;
+         opacity:.9;
       }
 
       .link.active input {
@@ -129,23 +143,24 @@
 
       input:focus {
          outline:0;
+         opacity:1;
+      }
+
+      button:hover {
+         opacity:1;
       }
 
       .copiado {
          visibility:hidden;
-      }
-
-      .copiado.active {
-         background:rgb(182, 179, 179);
-         border-radius:10px;
+         background:rgb(102, 101, 101);
+         border-radius:5px;
          position:absolute;
          left:150px;
-         top:310px;
-         padding:5px;
-         width:50px;
-         color:black;
-         font-size:12px;
-         visibility:hidden;
+         top:340px;
+         padding:9px;
+         color:#F2F2F2;
+         font-size:13px;
+         opacity:.9;
       }
    </style>
 
@@ -156,41 +171,63 @@
  
    <div class="container"> <h1></h1>
       <img src="share.svg" id="share" alt="Imagem indisponível">
+   </div>
 
-      <div class="link active"> 
-         <div class="fecha">X</div>
+   <div class="fechaTudo"></div>
 
-         <h1>Aponte sua câmera para o QR Code ou copie o link</h1>
-         
-         <img src="qrcode_psilva999.github.io.png" id="qrcode" alt="Imagem Indisponível">
-
-         <div class="copiarLink">
-            <input type="text" id="link" value="https://psilva999.github.io/Ayrton-Senna-Brasil/" readonly>
-
-            <button id="botao">COPY</button>
-         </div>
-         
-         <div class="copiado">Copied</div>
+   <div class="link active">
+      <div class="fecha">X</div>
+   
+      <h1>Aponte sua câmera para o QR Code ou copie o link</h1>
+   
+      <img src="qrcode_psilva999.github.io.png" id="qrcode" alt="Imagem Indisponível">
+   
+      <div class="copiarLink">
+         <input type="text" id="link" value="https://psilva999.github.io/Ayrton-Senna-Brasil/" readonly>
+   
+         <button id="botao">COPY</button>
       </div>
+   
+      <div class="copiado">Copied</div>
    </div>
 
    <script>
-      //Abre e fecha os links
+      //Mostra os links
       var compartilha = document.querySelector('#share')
       var mostraLinks = document.querySelector('.link')
+
+      //Copiar
+      var copiarLink = document.querySelector('.copiarLink')
+      var indicaQueCopiou = document.querySelector('.copiado')
+
+      //Fechar
+      var fechaPorFora = document.querySelector('.fechaTudo')
       var fechaLinks = document.querySelector('.fecha')
 
+      //Abre quando clica
       compartilha.addEventListener('click', () => {
          mostraLinks.style.visibility = 'visible'
+
+         fechaPorFora.style.visibility = 'visible'
       })
 
+      //Fecha no X
       fechaLinks.addEventListener('click', () => {
          mostraLinks.style.visibility = 'hidden'
+         indicaQueCopiou.style.visibility = 'hidden'
+
+         fechaPorFora.style.visibility = 'hidden'
       })
 
-      //Copiar link
-      var copiarLink = document.querySelector('.copiarLink')
+      //Fecha clicando fora
+      fechaPorFora.addEventListener('click', () => {
+         mostraLinks.style.visibility = 'hidden'
+         indicaQueCopiou.style.visibility = 'hidden'
 
+         fechaPorFora.style.visibility = 'hidden'
+      })
+
+      //Copia os link
       copiarLink.addEventListener('click', () => {
          var copiaPor = {
             link: document.querySelector('#link'),
@@ -203,8 +240,7 @@
          copiaPor.link.setSelectionRange(0, 9999)
          document.execCommand("copy") //Não encontrei um substituto
 
-         copiarPor.indicaQueCopiou.style.visibility = 'visible'
-         copiaPor.indicaQueCopiou.classList.add('active')
+         copiaPor.indicaQueCopiou.style.visibility = 'visible'
       })
    </script>
 </body>
