@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      body,
+      ul {
+         margin: 0px;
+         padding: 0px;
+      }
+   
+      a {
+         color: black;
+         text-decoration: none;
+         font-family: sans-serif;
+      }
+   
+      a:hover {
+         background: rgba(0, 0, 0, .1);
+      }
+   
+      #logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+      }
+   
+      #menu {
+         box-sizing: border-box;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 70px;
+         padding: 1rem;
+         background: #e73737;
+      }
+   
+      #nao-ordenada {
+         display: flex;
+         list-style: none;
+         gap: .5rem;
+      }
+   
+      #nao-ordenada a {
+         display: block;
+         padding: .5rem;
+      }
+
+      #btn-mobile {
+         display:none;
+      }
+
+      @media (max-width:1000px) {
+         #btn-mobile {
+            display:flex;
+            padding:.5rem 1rem;
+            font-size:1rem;
+            border:none;
+            background:none;
+            cursor:pointer;
+            gap:.5rem;
+         }
+
+         #burguer {
+            border-top:2px solid;
+            display:block;
+            width:20px;
+         }
+
+         #burguer::after, #burguer::before {
+            position:relative;
+            content:'';
+            display:block;
+            width:20px;
+            height:2px;
+            margin-top:5px;
+            background:currentColor;
+         }
+
+         #nao-ordenada {
+            display:block;
+            position:absolute;
+            top:70px;
+            right:0px;
+            width:100%;
+            height:0px;
+            background:#e7e7e7;
+            transition:.3s;
+            z-index:1000;
+            visibility:hidden;
+            overflow-y:hidden;
+         }
+
+         #lista.active #nao-ordenada {
+            height:calc(100vh - 70px);
+            visibility:visible;
+            overflow-y:auto;
+         }
+
+         #lista.active #burguer {
+            border-top-color:transparent;
+         }
+
+         #lista.active #burguer::before {
+            transform:rotate(135deg);
+         }
+
+         #lista.active #burguer::after {
+            transform:rotate(-135deg);
+            top:-7px;
+         }
+
+         #nao-ordenada a {
+            padding:1rem 0;
+            margin:0 1rem;
+            border-bottom:2px solid rgba(0,0,0,.05);
+         }
+      }
+   </style>
+
+   <title>Menu responsivo</title>
+</head>
+
+<body> 
+   <header id="menu">
+      <a href="#" id="logo">Logo</a>
+
+      <nav id="lista">
+         <button id="btn-mobile" aria-label = 'Abrir Menu' aria-haspopup="true" aria-controls="nao-ordenada" aria-expanded="false">Menu
+            <span id="burguer"></span>
+         </button>
+
+         <ul id="nao-ordenada" role="menu">
+            <li>
+               <a href="#">Sobre</a></li>
+
+            <li>
+               <a href="#">Produtos</a></li>
+
+            <li>
+               <a href="#">Portfólio</a></li>
+
+            <li>
+               <a href="#">Contato</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <script>
+      var btnMobile = document.querySelector('#btn-mobile')
+
+      function toggleMenu(event) {
+
+         if (event.type === 'touchstart') event.preventDefault()
+
+         const lista = document.querySelector('#lista')
+
+         lista.classList.toggle('active')
+
+         const active = lista.classList.contains('active')
+
+         event.currentTarget.setAttribute('aria-expanded', active)
+
+         if (active) { event.currentTarget.setAttribute('aria-label', 'Fechar Menu') }
+
+         else {
+            event.currentTarget.setAttribute('aria-label', 'Abrir Menu')
+         }
+      }
+
+      btnMobile.addEventListener('click', toggleMenu)
+
+      btnMobile.addEventListener('touchstart', toggleMenu)
+   </script>
+</body>
+</html>
