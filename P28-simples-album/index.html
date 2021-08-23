@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      * {
+         margin:0;
+         padding:0;
+         border:0;
+      }
+
+      body {
+         background-color:orange;
+         display:flex;
+         justify-content:center;
+         width:100%;
+      }
+
+      .container {
+         background-color:#F2F2F2;
+         border-radius:15px;
+         position:absolute;
+         display:flex;
+         width:80vw;
+         padding:5px;
+         justify-content:center;
+         flex-wrap:wrap;
+      }
+
+      .imagens {
+         box-shadow:0px 0px 0px 2px black;
+         border-radius:12px;
+         width:250px;
+         height:250px;
+         display:block;
+         margin:10px;
+         cursor:pointer;
+         overflow:hidden;
+         transition:.6s;
+      }
+
+      .imagens:hover {
+         transform:scale(1.1);
+         transition:.6s;
+      }
+
+      .parte {
+         display:flex;
+         flex-wrap:wrap;
+         justify-content:center;
+      }
+
+      .abre-fecha-imagens-ampliadas {
+         background-color:rgba(0,0,0,.8);
+         position:fixed;
+         display:none;
+         justify-content:center;
+         width:100vw;
+         height:100vh;
+      }
+
+      .abre-fecha-imagens-ampliadas span {
+         position:absolute;
+         height:50px;
+         right:25px;
+         top:-7px;
+         font-size:50px;
+         color:#F2F2F2;
+         cursor:pointer;
+         opacity:.7;
+      }
+
+      .abre-fecha-imagens-ampliadas span:hover {
+         opacity:1;
+      }
+
+      .container-imagem-ampliada {
+         height:100vh;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+      }
+
+      #modelo_img {
+         border-radius:12px;
+         height:50vh;
+         transform:scale(1.0);
+      }
+
+      @media (max-width:1000px) {
+         .container {
+            width:70vw;
+         }
+
+         #modelo_img {
+            height:20vh;
+         }
+      }
+   </style>
+
+   <title>Simples albúm</title>
+</head>
+
+<body> 
+   <div class="container">
+      <div class="parte">
+   
+         <div class="container-image">
+            <img src="7-moduloB.jpg" alt="imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="8-ExemploVariaveis.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="9-Igual-Recebe.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+      </div>
+   
+      <div class="parte">
+         <div class="container-image">
+            <img src="10-VarRegraPalavras.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="11-NomearVariaveis.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="12-DicasNomesVariavies.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+      </div>
+   
+      <div class="parte">
+         <div class="container-image">
+            <img src="13-TiposPrimitivosPrimordiais.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="14-TiposDeDados.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+   
+         <div class="container-image">
+            <img src="15-typeof.jpg" alt="Imagem indisponível" class="imagens">
+         </div>
+      </div>
+   </div>
+
+   <div class="abre-fecha-imagens-ampliadas">
+      <span>&times;</span>
+
+      <div class="container-imagem-ampliada">
+         <img src="" alt="imagem indisponível" id="modelo_img">
+      </div>
+   </div>
+
+   <script>
+      var selectImg = ''
+
+      let pega = {
+         partesImagens: document.querySelector('.parte'),
+         containerImage: document.querySelector('.container-image'),
+         imagens: document.querySelectorAll('.imagens'),
+
+         containerImagemAmpliada: document.querySelector('.abre-fecha-imagens-ampliadas'),
+         imagemAmpliada: document.querySelector('#modelo_img')
+      }
+
+      let fechaPor = {
+         btnX: document.querySelector('span'),
+         fora: document.querySelector('.abre-fecha-imagens-ampliadas')
+      }
+
+      for (let i = 0; i < pega.imagens.length; i++) {
+         pega.imagens[i].addEventListener('click', () => {
+
+            selectImg = pega.imagens[i].getAttribute('src')
+            pega.imagemAmpliada.setAttribute('src', selectImg)
+
+            pega.containerImagemAmpliada.style.display = 'flex'
+         })
+      }
+
+      fechaPor.btnX.addEventListener('click', () => {
+         pega.containerImagemAmpliada.style.display = 'none'
+      })
+
+      fechaPor.fora.addEventListener('click', () => {
+         pega.containerImagemAmpliada.style.display = 'none'
+      })
+   </script>
+</body>
+</html>
