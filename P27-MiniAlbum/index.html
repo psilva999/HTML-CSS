@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      * {
+         margin:0;
+         padding:0;
+         border:0;
+         box-sizing:border-box;
+         font-family:sans-serif;
+      }
+
+      body {
+         background-color:orange;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         width:100vw;
+         height:100vh;
+      }
+
+      div {
+         background-color:#F2F2F2;
+         border-radius:15px;
+         width:350px;
+         height:300px;
+         position:absolute;
+         padding:10px;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         text-align:center;
+      }
+
+      img {
+         border-radius:20px;
+      }
+
+      ul {
+         background:rgba(0,0,0,.7);
+         position:absolute;
+         bottom:55px;
+         list-style:none;
+      }
+
+      li {
+         border-radius:20px;
+         display:inline-block;
+         margin:10px;
+         color:#F2F2F2;
+         padding:5px;
+         text-align:center;
+         cursor:pointer;
+         user-select:none;
+      }
+
+      .imagem1 {
+         border:1px solid #F2F2F2;
+      }
+
+      .imagem2 {
+         border:1px solid yellow;
+      }
+
+      .imagem3 {
+         border:1px solid orange;
+      }
+   </style>
+
+   <title>Mini albúm</title>
+</head>
+
+<body> 
+   <div>
+      <img src="1-Internet.jpg" alt="imagem indisponível" width="300" height="200">
+
+      <ul>
+         <li class="imagem1">1</li>
+         <li class="imagem2">2</li>
+         <li class="imagem3">3</li>
+      </li>
+   </div>
+
+   <script>
+      var imagem = document.querySelector('img')
+
+      var mudaImgPara = {
+         internet: document.querySelector('.imagem1'),
+         representaDados: document.querySelector('.imagem2'),
+         comoConecta: document.querySelector('.imagem3')
+      }
+
+      mudaImgPara.internet.addEventListener('click', () => {
+         imagem.src = '1-internet.jpg'
+      })
+
+      mudaImgPara.representaDados.addEventListener('click', () => {
+         imagem.src = '2-RepresentaDados.jpg'
+      })
+
+      mudaImgPara.comoConecta.addEventListener('click', () => {
+         imagem.src = '3-ComoConecta.jpg'
+      })
+   </script>
+</body>
+</html>
