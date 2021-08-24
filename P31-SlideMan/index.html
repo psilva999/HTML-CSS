@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      * {
+         margin:0;
+         padding:0;
+         font-family:sans-serif;
+      }
+
+      .container {
+         background:url('1.jpg');
+         background-size:cover;
+         background-position:center;
+         position:relative;
+         overflow:hidden;
+         width:100vw;
+         height:100vh;
+      }
+
+      .slider {
+         position:absolute;
+         top:0;
+         left:0;
+         width:500%;
+         height:100%;
+         animation:animate 10s linear infinite;
+      }
+
+      .slide {
+         position:relative;
+         width:20%;
+         height:100%;
+         float:left;
+      }
+
+      .caption {
+         position:absolute;
+         bottom:60px;
+         left:60px;
+         right:60px;
+         padding:30px;
+         background:rgba(0,0,0,.5);
+         box-sizing:border-box;
+         transition:.5s;
+      }
+
+      h2 {
+         margin:0 0 20px;
+         padding:0;
+         color:#F2F2F2;
+         font-size:20px;
+         transition:.5s;
+      }
+
+      p {
+         margin:0;
+         padding:0;
+         color:#F2F2F2;
+         font-size:17px;
+         transition:.5s;
+      }
+
+      .slide.slider1 {
+         background:url('1.jpg');
+         background-size:cover;
+         background-position:center;
+      }
+
+      .slide.slider2 {
+         background:url('2.jpg');
+         background-size:cover;
+         background-position:center;
+      }
+
+      .slide.slider3 {
+         background:url('3.jpg');
+         background-size:cover;
+         background-position:center;
+      }
+
+      .slide.slider4 {
+         background:url('4.jpg');
+         background-size:cover;
+         background-position:center;
+      }
+
+      @keyframes animate {
+         0% {
+            left:0;
+         }
+
+         20% {
+            left:0;
+         }
+
+         25% {
+            left:-100%;
+         }
+
+         45% {
+            left:-100%;
+         }
+
+         50% {
+            left:-200%;
+         }
+
+         70% {
+            left:-200%;
+         }
+
+         75% {
+            left:-300%;
+         }
+
+         95% {
+            left:-300%;
+         }
+
+         100% {
+            left:-400%;
+         }
+      }
+
+      @media (max-width:768px) {
+         .caption {
+            bottom:20px;
+            left:20px;
+            right:20px;
+            padding:20px;
+         }
+
+         h1 {
+            margin:0 0 10px;
+            font-size:17px;
+         }
+
+         p {
+            font-size:14px;
+         }
+      }
+   </style>
+
+   <title>Slide do Batman</title>
+</head>
+
+<body>
+   <div class="container">
+      <div class="slider">
+
+         <figure class="slide slider1">
+            <figcaption class="caption">
+               <h2>Slide1</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam consectetur excepturi doloribus eius rerum quos maxime, est fugiat cumque magnam velit reiciendis maiores expedita! Sit ipsam ducimus ut. Corporis, excepturi.</p>
+            </figcaption>
+         </figure>
+
+         <figure class="slide slider2">
+            <figcaption class="caption">
+               <h2>Slide2</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam consectetur excepturi doloribus eius rerum quos maxime, est fugiat cumque magnam velit reiciendis maiores expedita! Sit ipsam ducimus ut. Corporis, excepturi.</p>
+            </figcaption>
+         </figure>
+
+         <figure class="slide slider3">
+            <figcaption class="caption">
+               <h2>Slide3</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam consectetur excepturi doloribus eius rerum quos
+                  maxime, est fugiat cumque magnam velit reiciendis maiores expedita! Sit ipsam ducimus ut. Corporis, excepturi.
+               </p>
+            </figcaption>
+         </figure>
+
+         <figure class="slide slider4">
+            <figcaption class="caption">
+               <h2>Slide3</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam consectetur excepturi doloribus eius rerum quos
+                  maxime, est fugiat cumque magnam velit reiciendis maiores expedita! Sit ipsam ducimus ut. Corporis, excepturi.
+               </p>
+            </figcaption>
+         </figure>
+
+      </div>
+   </div>
+
+   <script>
+   </script>
+</body>
+
+</html>
