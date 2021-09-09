@@ -42,12 +42,6 @@
          overflow:hidden;
       }
 
-      @keyframes scrooling {
-         0% { transform:translateX(75vw); }
-
-         100% { transform:translateX(-165vw); }
-      }
-
       #marquee:before, #marquee:after {
          position:absolute;
          top:0;
@@ -71,6 +65,12 @@
          display:flex;
          list-style:none;
          animation:scrooling 19s linear infinite;
+      }
+
+      @keyframes scrooling {
+         0% { transform:translateX(75vw); }
+
+         100% { transform:translateX(-165vw); }
       }
 
       .campeoes:hover {
