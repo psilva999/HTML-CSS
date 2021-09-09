@@ -34,27 +34,18 @@
       #marquee {
          background:#F2F2F2;
          position:relative;
-         width:100vw;
+         width:75vw;
          height:180px;
          padding:5px;
          border-radius:10px;
          display:flex;
-      }
-
-      .campeoes {
-         display:flex;
-         list-style:none;
-         animation:scrooling 19s linear infinite;
+         overflow:hidden;
       }
 
       @keyframes scrooling {
-         0% {
-            transform:translateX(0vw);
-         }
+         0% { transform:translateX(75vw); }
 
-         100% {
-            transform:translateX(-175vw);
-         }
+         100% { transform:translateX(-165vw); }
       }
 
       #marquee:before, #marquee:after {
@@ -74,6 +65,16 @@
       #marquee:after {
          right:0;
          background: linear-gradient(to left, #111 0%, transparent 100%);
+      }
+
+      .campeoes {
+         display:flex;
+         list-style:none;
+         animation:scrooling 19s linear infinite;
+      }
+
+      .campeoes:hover {
+         animation-play-state: paused;
       }
 
       .campeoes li {
@@ -96,7 +97,7 @@
 <body>
    <img class="background-image" src="https://s3.static.brasilescola.uol.com.br/be/2020/03/prost-senna-mclaren.jpg">
 
-   <div id="marquee">
+   <nav id="marquee">
       <ul class="campeoes">
          <li>Senna</li>
          <li>Hamilton</li>
@@ -104,12 +105,11 @@
          <li>Piquet</li>
          <li>Lauda</li>
          <li>Fittipaldi</li>
-
-         <li>Senna</li>
       </ul>
-   </div>
+   </nav>
 
    <script>
+
    </script>
 </body>
 
