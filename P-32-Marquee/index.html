@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="UTF-8">
+
+   <style>
+      * {
+         margin:0;
+         padding:0;
+         font-family:sans-serif;
+      }
+
+      body {
+         width:100vw;
+         height:100vh;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+      }
+
+      .background-image {
+         position:absolute;
+         object-fit:cover;
+         width:100vw;
+         height:100vh;
+         top:0;
+         left:0;
+         opacity:.8;
+      }
+
+      #marquee {
+         background:#F2F2F2;
+         position:relative;
+         width:100vw;
+         height:180px;
+         padding:5px;
+         border-radius:10px;
+         display:flex;
+      }
+
+      .campeoes {
+         display:flex;
+         list-style:none;
+         animation:scrooling 19s linear infinite;
+      }
+
+      @keyframes scrooling {
+         0% {
+            transform:translateX(0vw);
+         }
+
+         100% {
+            transform:translateX(-175vw);
+         }
+      }
+
+      #marquee:before, #marquee:after {
+         position:absolute;
+         top:0;
+         width:50px;
+         height:100%;
+         content:'';
+         z-index:1;
+      }
+
+      #marquee:before {
+         left:0;
+         background: linear-gradient(to right, #111 0%, transparent 100%);
+      }
+
+      #marquee:after {
+         right:0;
+         background: linear-gradient(to left, #111 0%, transparent 100%);
+      }
+
+      .campeoes li {
+         display:flex;
+         align-items:center;
+         border:3px solid black;
+         padding:5px;
+         margin-right:50px;
+         flex-shrink:0;
+         font-size:5rem;
+         white-space:nowrap;
+         text-align:left;
+         text-transform:uppercase;
+      }
+   </style>
+
+   <title>Marquee</title>
+</head>
+
+<body>
+   <img class="background-image" src="https://s3.static.brasilescola.uol.com.br/be/2020/03/prost-senna-mclaren.jpg">
+
+   <div id="marquee">
+      <ul class="campeoes">
+         <li>Senna</li>
+         <li>Hamilton</li>
+         <li>Vettel</li>
+         <li>Piquet</li>
+         <li>Lauda</li>
+         <li>Fittipaldi</li>
+
+         <li>Senna</li>
+      </ul>
+   </div>
+
+   <script>
+   </script>
+</body>
+
+</html>
