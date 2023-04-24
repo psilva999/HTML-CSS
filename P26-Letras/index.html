@@ -66,13 +66,7 @@
 
    <script>
       function typeWriter(conteudo) {
-         const textoArray = conteudo.innerHTML.split('')
-         conteudo.innerHTML = ''
-
-         textoArray.forEach((letra, i) => {
-
-            setTimeout(() => conteudo.innerHTML += letra, 75 * i)
-         })
+         
       }
 
       const texto = document.querySelector('p')
